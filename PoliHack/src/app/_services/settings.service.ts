@@ -11,5 +11,6 @@ export class SettingsService {
   {
     return this.url;
   }
+  
   constructor() { }
 }
