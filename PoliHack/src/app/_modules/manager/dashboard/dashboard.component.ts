@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Group } from '../../../_classes/group';
 import { GroupService } from '../_services/group.service';
+import { Group } from '../../../_classes/group';
 
 @Component({
   selector: 'app-dashboard',
