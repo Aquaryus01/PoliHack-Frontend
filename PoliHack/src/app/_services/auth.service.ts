@@ -10,21 +10,45 @@ import { HttpHeaders } from '@angular/common/http';
 export class AuthService {
 
   constructor(private http: HttpClient, private settings: SettingsService) {
-    this.token = null;
     this.apiPath = this.settings.getUrl();
+    this.refreshToken().subscribe();
+    this.myData = new Object();
   }
 
   private token: string;
   private apiPath: string;
+  private myData: Object;
+
+  getMe(): Observable<any>{
+    return new Observable(observer => {
+      let headers = new HttpHeaders({
+        'Authorization': 'Bearer ' + this.getToken()
+      });
+  
+      this.http.get(this.apiPath + 'me', {headers: headers}).subscribe(data => {
+        this.myData = data;
+        console.log(data);
+        observer.next();
+      });
+    })
+  }
+
+  isAdmin(): boolean{
+    return this.myData['pm'];
+  }
 
   login(email: string, password: string): Observable<string>{
     return new Observable(observer => {
-      let headers: HttpHeaders;
-      
+      let headers: HttpHeaders = new HttpHeaders();
 
-      this.http.post(this.apiPath + '/login', {email: email, password: password}, {}).subscribe(data => {
+      this.http.post(this.apiPath + 'login', {email: email, password: password}, {}).subscribe(data => {
         if(data['error'] == null){
-          observer.next('');
+          this.token = data['token'];
+          localStorage.setItem('token', this.token);
+
+          this.getMe().subscribe(datax => {
+            observer.next('');
+          });
         }
         else{
           observer.next(data['error']);
@@ -33,18 +57,22 @@ export class AuthService {
     })
   }
 
-  refreshToken(){
-    if(this.token == null){
-      let x = localStorage.getItem('token');
-
-      if(x != undefined && x != null){
-        this.token = x;
+  refreshToken(): Observable<any>{
+    return new Observable(observer => {
+      if(this.token == null){
+        let x = localStorage.getItem('token');
+        if(x != undefined && x != null){
+          this.token = x;
+        }
+        observer.next();
       }
-    }
+      else{
+        observer.next();
+      }
+    })
   }
 
   getToken(): string{
-    this.refreshToken();
     return this.token;
   }
 
