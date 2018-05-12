@@ -28,12 +28,12 @@
 
         <div class="row with-forms">
           <div class="col-md-6">
-            <h5>Date start<i class="tip" data-tip-content="Name of the project"><div class="tip-content">A short description of the project</div></i></h5>
-            <input class="search-field" value="" type="date">
+            <h5>Date start<i class="tip" data-tip-content="Starting date of the project"><div class="tip-content">Starting date of the project</div></i></h5>
+            <input class="search-field" [(ngModel)]="project.start" type="date">
           </div>
           <div class="col-md-6">
-            <h5>Date End<i class="tip" data-tip-content="Name of the project"><div class="tip-content">A short description of the project</div></i></h5>
-            <input class="search-field" value="" type="date">
+            <h5>Date end<i class="tip" data-tip-content="Deadline of the project"><div class="tip-content">Deadline of the project</div></i></h5>
+            <input class="search-field" [(ngModel)]="project.end" value="" type="date">
           </div>
         </div>
 

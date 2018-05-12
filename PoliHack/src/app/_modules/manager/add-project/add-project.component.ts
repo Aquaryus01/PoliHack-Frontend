@@ -42,8 +42,8 @@ export class AddProjectComponent implements OnInit {
     this.groupService.handleCreateGroup({
       name: this.project['name'],
       description: this.project['description'],
-      start: '1999.12.11',
-      end: '2018.05.12',
+      start: this.project['start'],
+      end: this.project['end'],
       skills: this.skills
     });
   }
