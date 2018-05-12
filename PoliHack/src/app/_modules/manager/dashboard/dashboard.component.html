@@ -1,6 +1,7 @@
 <app-navbar></app-navbar> <!--TOP NAVBAR-->
 <div class="container">
-      <app-sort></app-sort> <!--FIlter -->
+      <app-sort (filterByCompletion)="handleFilter($event)" ></app-sort> <!--FIlter -->
+
       <div class="dashboard-list-box invoices with-icons margin-top-20">
           <h4>Projects</h4>
           <ul>
@@ -17,45 +18,7 @@
                 <a href="dashboard-invoice.html" class="button gray">View Project</a>
               </div>
             </li>
-            <li><i class="list-box-icon sl sl-icon-doc"></i>
-              <strong>Proiect c#</strong>
-              <ul>
-                <li>group.description</li>
-              </ul>
-              <ul>
-                <li class="unpaid">Deadline: </li>
-                <li>12.14.20312</li>
-              </ul>
-              <div class="buttons-to-right">
-                <a href="dashboard-invoice.html" class="button gray">View Project</a>
-              </div>
-            </li>
-            <li><i class="list-box-icon sl sl-icon-doc"></i>
-              <strong>Proiect c#</strong>
-              <ul>
-                <li>group.description</li>
-              </ul>
-              <ul>
-                <li class="unpaid">Deadline: </li>
-                <li>12.14.20312</li>
-              </ul>
-              <div class="buttons-to-right">
-                <a href="dashboard-invoice.html" class="button gray">View Project</a>
-              </div>
-            </li>
-            <li><i class="list-box-icon sl sl-icon-doc"></i>
-              <strong>Proiect c#</strong>
-              <ul>
-                <li>group.description</li>
-              </ul>
-              <ul>
-                <li class="unpaid">Deadline: </li>
-                <li>12.14.20312</li>
-              </ul>
-              <div class="buttons-to-right">
-                <a href="dashboard-invoice.html" class="button gray">View Project</a>
-              </div>
-            </li>
+            
           </ul>
         </div><br><br><br>
 

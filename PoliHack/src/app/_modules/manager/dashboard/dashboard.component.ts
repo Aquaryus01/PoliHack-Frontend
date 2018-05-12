@@ -11,11 +11,31 @@ export class DashboardComponent implements OnInit {
 
   constructor(private groupService: GroupService) { }
   modal: boolean = false;
+  groupsBackup: Group[] = [];
   groups: Group[] = [];
+  filterCategory: number;
+
   ngOnInit() {
     this.groupService.getData().subscribe(res => {
         this.groups = res;
+        this.groupsBackup = this.groups;
     })
+  }
+
+  handleFilter(data){
+    this.filterCategory = data;
+    
+    if(data == 0){
+      this.groups = this.groupsBackup;
+    }
+    else{
+      this.groups = this.groupsBackup.filter(x => {
+        if(x['status'] == data){
+          return true;
+        }
+        return false;
+      })
+    }
   }
 
 }
