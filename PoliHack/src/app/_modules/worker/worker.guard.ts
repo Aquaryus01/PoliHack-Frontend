@@ -29,6 +29,6 @@ export class WorkerGuard implements CanActivate {
           observer.next(false);          
         }
       })
-    })
+    });
   }
 }
