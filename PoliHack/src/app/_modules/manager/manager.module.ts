@@ -8,6 +8,8 @@ import { DummyComponent } from './dummy/dummy.component';
 import { ManagerGuard } from './manager.guard';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectComponent } from './project/project.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -16,7 +18,9 @@ const appRoutes: Routes = [
     canActivate: [ ManagerGuard ],
     children: [
       { path: '', component: DashboardComponent},
-      { path: 'add', component: AddProjectComponent}
+      { path: 'add', component: AddProjectComponent},
+      { path: 'project/:id', component: ProjectComponent},
+      { path: 'profile', component: ProfileComponent}
     ]
   }
 ];
@@ -33,7 +37,9 @@ const appRoutes: Routes = [
     AddProjectComponent,
     NavbarComponent,
     SortComponent,
-    DummyComponent
+    DummyComponent,
+    ProjectComponent,
+    ProfileComponent
   ]
 })
 export class ManagerModule { }
