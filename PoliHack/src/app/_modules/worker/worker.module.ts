@@ -6,6 +6,7 @@ import { DummyComponent } from './dummy/dummy.component';
 import { WorkerGuard } from './worker.guard';
 import { NavbarComponent } from '../worker/navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CommonModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
   declarations: [

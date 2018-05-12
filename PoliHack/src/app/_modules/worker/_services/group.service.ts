@@ -14,14 +14,45 @@ export class GroupService {
               private authService: AuthService
               ) { }
 
+  getMySkills(){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.get(this.settingsService.getUrl() + 'skill/my', {headers: headers});
+  }
+
+  addSkill(skill){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.post(this.settingsService.getUrl() + 'skill/user/add', skill, {headers: headers});
+  }
+
+  getAllSkills(){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.get(this.settingsService.getUrl() + 'skill', {headers: headers});
+  }
   
+  getIdOfSkill(name: string){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.get(this.settingsService.getUrl() + 'skill/search/' + name, {headers: headers});
+  }
+
+  deleteSkill(id){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.delete(this.settingsService.getUrl() + 'skill/user/delete/' + id, {headers: headers});
+  }
 
   getData(){
     let headers: HttpHeaders = new HttpHeaders({
       'Authorization' : 'Bearer ' + this.authService.getToken()
     });
-    //headers.append('Authorization', 'Bearer ' + this.authService.getToken());
-    //headers.append('Authorization', 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1MjYwNjUzMTV9.fwWej9npJXvpNLguWyQBfeRV9vFpexQ270o5ogIoUPQ');
     return this.http.get<Group[]>(this.settingsService.getUrl() + 'user/projects', {headers: headers});
   }
 }
