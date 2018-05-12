@@ -14,15 +14,15 @@
         <!-- Title -->
         <div class="row with-forms">
           <div class="col-md-12">
-            <h5>Name of the project <i class="tip" data-tip-content="Name of the project"><div class="tip-content">Name of your business</div></i></h5>
-            <input class="search-field" value="" type="text">
+            <h5>Name of the project <i class="tip" data-tip-content="Name of the project"><div class="tip-content">A suggestive name for the project</div></i></h5>
+            <input class="search-field" [(ngModel)]="project.name" type="text">
           </div>
         </div>
 
         <div class="row with-forms">
             <div class="col-md-12">
-              <h5>Description of the project <i class="tip" data-tip-content="Name of the project"><div class="tip-content">Name of your business</div></i></h5>
-              <input class="search-field" value="" type="text">
+              <h5>Description of the project <i class="tip" data-tip-content="Name of the project"><div class="tip-content">A short description of the project</div></i></h5>
+              <input class="search-field" [(ngModel)]="project.description" value="" type="text">
             </div>
           </div>
 
@@ -31,45 +31,41 @@
 
           <!-- Status -->
           <div class="col-md-6">
-            <h5>Skills</h5>
-            <input class="search-field" value="" type="text">
+            <h5>Skills <div class="tip-content">Skill required for the project</div></h5>
+            <input class="search-field" [(ngModel)]="currentSkill.name" type="text" list="skillsList">
           </div>
+
+          <datalist id="skillsList">
+            <option *ngFor="let skill of genericSkills" value="{{skill.name}}">
+          </datalist>
 
           <!-- Type -->
           <div class="col-md-4">
-            <h5>Number of peolple <i class="tip" data-tip-content="Maximum of 15 keywords related with your business"><div class="tip-content">Maximum of 15 keywords related with your business</div></i></h5>
-            <input placeholder="Keywords should be separated by commas" type="text">
+            <h5>Number of peolple <i class="tip" data-tip-content="Number of people required with this skill"><div class="tip-content">Number of people required with this skill</div></i></h5>
+            <input [(ngModel)]="currentSkill.number" type="text">
           </div>
 
           <div class="col-md-2" style="margin-top:30px">
-              <a href="#" class="button">Filled Button</a>
+              <a (click)="handleAdd()" style="color: white" class="button">Add skill</a>
           </div>
 
           <div class="col-md-12">
               <div  style="background-color: black" class="dashboard-list-box with-icons margin-top-20">
                 <h4>Your requierment</h4>
                 <ul >
-                  <!-- <li>
-                    <strong>Frontend </strong>
+                  <li *ngFor="let skill of skills; let i = index" style="font-size: 1.2em">
+                    <i class="list-box-icon sl sl-icon-star"></i> {{skill.name}} <div class="numerical-rating high">{{skill.number}}</div>
+                    <a (click)="removeItem(i)" class="close-list-item"><i class="fa fa-close"></i></a>
                   </li>
-                  <li> <span class="paid">Number of people: </span>
-                    <span>123</span></li> -->
-                    <li style="font-size: 1.2em">
-                        <i class="list-box-icon sl sl-icon-star"></i> c# developer-frontend <div class="numerical-rating high" data-rating="5"></div>
-                        <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                      </li>
-                </ul>
-                <ul>
-                  <!-- <li style="font-size: 1.2em"><i class="list-box-icon sl sl-icon-doc"></i>
-                    <strong>Frontend Developer</strong>
-                   
-                   
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li> -->
                 </ul>
               </div>
             </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-2" style="margin-top:30px">
+                <a (click)="submitForm()" style="color: white" class="button">Submit</a>
+            </div>
         </div>
         <!-- Row / End -->
 

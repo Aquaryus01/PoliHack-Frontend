@@ -7,6 +7,7 @@ import { SortComponent } from './sort/sort.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { ManagerGuard } from './manager.guard';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
     // MatAutocompleteModule
   ],
   declarations: [
