@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SortComponent } from './sort/sort.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { ManagerGuard } from './manager.guard';
+import { AddProjectComponent } from './add-project/add-project.component';
 
 const appRoutes: Routes = [
   {
@@ -13,7 +14,8 @@ const appRoutes: Routes = [
     component: DummyComponent,
     canActivate: [ ManagerGuard ],
     children: [
-      { path: '', component: DashboardComponent}
+      { path: '', component: DashboardComponent},
+      { path: 'add', component: AddProjectComponent}
     ]
   }
 ];
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
   ],
   declarations: [
     DashboardComponent,
+    AddProjectComponent,
     NavbarComponent,
     SortComponent,
     DummyComponent

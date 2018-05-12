@@ -2,9 +2,8 @@
 		<div class="dashboard-nav-inner" style="max-height: 315px;">
 
 			<ul data-submenu-title="Main">
-				<li class="active"><a href="dashboard.html"><i class="sl sl-icon-settings"></i>Projects</a></li>
-				<!-- <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-"></i> Messages <span class="nav-tag messages">2</span></a></li> -->
-				<li><a href="dashboard-bookings.html"><i class="sl sl-icon-plus"></i> Add project</a></li>
+				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a  routerLink="/dashboard-pm"><i class="sl sl-icon-settings"></i>Projects</a></li>
+				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a  routerLink="/dashboard-pm/add" ><i class="sl sl-icon-plus"></i> Add project</a></li>
 			</ul>
       
       

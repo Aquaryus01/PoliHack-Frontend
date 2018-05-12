@@ -12,7 +12,7 @@ import { WorkerModule } from './_modules/worker/worker.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     AuthModule,
