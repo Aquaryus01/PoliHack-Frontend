@@ -8,11 +8,8 @@ import { DummyComponent } from './dummy/dummy.component';
 import { AuthGuard } from './auth.guard';
 
 const appRoutes: Routes = [
-  { path: '', component: DummyComponent, canActivate: [AuthGuard], children: [
-    { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-    { path: 'sign-in', component: SignInComponent },
-    { path: 'sign-up', component: SignUpComponent },
-  ] }
+  { path: '', component: DummyComponent },
+  { path: 'sign-in', component: SignInComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -20,8 +17,7 @@ const appRoutes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     )
   ],
   declarations: [

@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../_services/auth.service';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WorkerGuard implements CanActivate {
+export class ManagerGuard implements CanActivate {
+  constructor(private router: Router, private authService: AuthService){
 
-  constructor(private authService: AuthService, private router: Router) {}
-
-  canActivate(): Observable<boolean>{
+  }
+  
+  canActivate(): Observable<boolean> {
+    console.log('guard activated');
     return new Observable(observer => {
       this.authService.requestMyPrivileges().subscribe(data => {
         let token = data['token'];
         let pm = data['pm'];
-
-        if(token != null && pm == false){
+  
+        if(token != null && pm){
           observer.next(true);
         }
-        else if(token != null && pm == true){
-          this.router.navigateByUrl('/dashboard-pm');
+        else if(token != null && pm == false){
+          this.router.navigateByUrl('/dashboard');
           observer.next(false);
         }
         else{
           this.router.navigateByUrl('/sign-in');
-          observer.next(false);          
+          observer.next(false);
         }
       })
     })
