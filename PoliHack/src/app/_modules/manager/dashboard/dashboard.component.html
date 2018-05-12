@@ -1,11 +1,18 @@
 <app-navbar></app-navbar> <!--TOP NAVBAR-->
-<div class="container">
+<div class="dashboard-content">
+    <!-- <div class="header">
+      <button class="hamburger hamburger--collapse" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+    </div> -->
       <app-sort></app-sort> <!--FIlter -->
       <div class="dashboard-list-box invoices with-icons margin-top-20">
           <h4>Projects</h4>
           <ul>
             <li *ngFor="let group of groups"><i class="list-box-icon sl sl-icon-doc"></i>
-              <strong>{{group.name}}</strong>
+              <strong>{{group.name}}</strong>v
               <ul>
                 <li>group.description</li>
               </ul>
