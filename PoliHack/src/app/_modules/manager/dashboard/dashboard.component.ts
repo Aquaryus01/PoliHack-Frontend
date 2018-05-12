@@ -10,7 +10,7 @@ import { Group } from '../../../_classes/group';
 export class DashboardComponent implements OnInit {
 
   constructor(private groupService: GroupService) { }
-
+  modal: boolean = false;
   groups: Group[] = [];
   ngOnInit() {
     this.groupService.getData().subscribe(res => {

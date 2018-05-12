@@ -296,21 +296,6 @@ header.fullwidth .container {
 	display: inline-block;
 }
 
-/* mobile fix */
-@media (min-width: 1025px) and (max-width: 1239px)  {
-	.right-side {
-		width: auto;
-		display: inline-block;
-		margin-top: -126px;
-		position: relative;
-	}
-
-	.left-side {
-		width: 100%;
-		display: inline-block;
-	}
-}
-
 #logo,
 #navigation { float: left; }
 
