@@ -9,12 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ManagerModule } from './_modules/manager/manager.module';
 import { AuthModule } from './_modules/auth/auth.module';
 import { WorkerModule } from './_modules/worker/worker.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     AuthModule,
     WorkerModule,
     ManagerModule,
