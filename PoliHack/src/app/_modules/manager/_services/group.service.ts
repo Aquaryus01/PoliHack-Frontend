@@ -15,11 +15,10 @@ export class GroupService {
     ) { }
 
 
-
   getData(){
     let headers: HttpHeaders = new HttpHeaders({
       'Authorization' : 'Bearer ' + this.authService.getToken()
     });
-    return this.http.get<Group[]>(this.settingsService.getUrl() + '', {headers: headers});
+    return this.http.get<Group[]>(this.settingsService.getUrl() + 'user/projects', {headers: headers});
   }
 }

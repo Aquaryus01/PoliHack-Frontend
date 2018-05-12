@@ -2,10 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DummyComponent } from './dummy/dummy.component';
+import { WorkerGuard } from './worker.guard';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent},
+  {
+    path: 'dashboard', 
+    component: DummyComponent,
+    canActivate: [WorkerGuard ],
+    children: [
+      { path: '', component: DashboardComponent}
+    ]
+  }
 ];
 
 @NgModule({
@@ -16,6 +24,7 @@ const appRoutes: Routes = [
   ],
   declarations: [
     DashboardComponent,
+    DummyComponent,
   ]
 })
 export class WorkerModule { }

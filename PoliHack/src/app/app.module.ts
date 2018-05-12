@@ -15,9 +15,9 @@ import { WorkerModule } from './_modules/worker/worker.module';
     AppComponent,
   ],
   imports: [
-    ManagerModule,
     AuthModule,
     WorkerModule,
+    ManagerModule,
     BrowserModule,
     RouterModule,
     HttpClientModule,

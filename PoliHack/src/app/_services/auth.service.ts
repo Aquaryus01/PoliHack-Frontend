@@ -11,13 +11,26 @@ export class AuthService {
 
   constructor(private http: HttpClient, private settings: SettingsService) {
     this.apiPath = this.settings.getUrl();
-    this.refreshToken().subscribe();
+    this.token = null;
     this.myData = new Object();
+    this.refreshToken().subscribe(x => {
+      this.getMe().subscribe();
+    });
   }
 
   private token: string;
   private apiPath: string;
   private myData: Object;
+
+  requestMyPrivileges(): Observable<Object>{
+    return new Observable(observer => {
+      this.refreshToken().subscribe(x => {
+        this.getMe().subscribe(y => {
+          observer.next({token: this.token, pm: this.myData['pm']});
+        })
+      })
+    })
+  }
 
   getMe(): Observable<any>{
     return new Observable(observer => {
