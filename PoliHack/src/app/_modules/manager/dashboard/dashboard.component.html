@@ -9,15 +9,16 @@
           </span>
         </button>
     </div> -->
-    <app-sort (filterByCompletion)="handleFilter($event)" ></app-sort> <!--FIlter -->
+    <app-sort (filterByCompletion)="handleFilter($event)" [numberOfProjects]="numberOfProjects"></app-sort> <!--FIlter -->
 
       <div class="dashboard-list-box invoices with-icons margin-top-20">
           <h4>Projects</h4>
+          <!-- <h5>Sorry, you don't have any projects in this category :(</h5> -->
           <ul>
             <li *ngFor="let group of groups"><i class="list-box-icon sl sl-icon-doc"></i>
-              <strong>{{group.name}}</strong>v
+              <strong>{{group.name}}</strong>
               <ul>
-                <li>group.description</li>
+                <li>{{group.description}}</li>
               </ul>
               <ul>
                 <li class="unpaid">Deadline: </li>

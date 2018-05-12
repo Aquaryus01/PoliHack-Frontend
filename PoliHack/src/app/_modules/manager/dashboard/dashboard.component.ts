@@ -14,18 +14,28 @@ export class DashboardComponent implements OnInit {
   groupsBackup: Group[] = [];
   groups: Group[] = [];
   filterCategory: number;
+  numberOfProjects: number[];
 
   ngOnInit() {
     this.groupService.getData().subscribe(res => {
         this.groups = res;
         this.groupsBackup = this.groups;
+        console.log(res);
+        
+
+        this.numberOfProjects = [this.groups.length,
+                                this.groups.filter(x => x['status'] == 1).length,
+        this.groups.filter(x => x['status'] == 2).length,
+        this.groups.filter(x => x['status'] == -1).length]
+
+        console.log(this.numberOfProjects);
     })
   }
 
   handleFilter(data){
     this.filterCategory = data;
     
-    if(data == 0){
+    if(data == 3){
       this.groups = this.groupsBackup;
     }
     else{
