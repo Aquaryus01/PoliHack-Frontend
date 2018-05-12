@@ -1,78 +1,118 @@
-<div class="sign-in-form style-1">
+<header id="header-container">
 
-    <h2>Sign Up</h2>
+    <!-- Header -->
+    <div id="header">
+      <div class="container">
 
-    <div class="tabs-container alt">
-
-      <!-- Login -->
-      <div class="tab-content" id="tab1" style="display: none;">
-        <form method="post" class="login">
-
-          <p class="form-row form-row-wide">
-            <label for="username">Username:
-              <i class="im im-icon-Male"></i>
-              <input class="input-text" name="username" id="username" value="" type="text">
-            </label>
-          </p>
-
-          <p class="form-row form-row-wide">
-            <label for="password">Password:
-              <i class="im im-icon-Lock-2"></i>
-              <input class="input-text" name="password" id="password" type="password">
-            </label>
-            <span class="lost_password">
-              <a href="#">Lost Your Password?</a>
-            </span>
-          </p>
-
-          <div class="form-row">
-            <input class="button border margin-top-5" name="login" value="Login" type="submit">
-            <div class="checkboxes margin-top-10">
-              <input id="remember-me" name="check" type="checkbox">
-              <label for="remember-me">Remember Me</label>
-            </div>
+        <!-- Right Side Content / End -->
+        <div class="right-side">
+          <div class="header-widget">
+            <a class="sign-in popup-with-zoom-anim" routerLink="/sign-in">Home</a>
+            <a class="sign-in popup-with-zoom-anim" routerLink="/subscription">Subsciption</a>
           </div>
-          
-        </form>
+        </div>
       </div>
+    </div>
+        <!-- Right Side Content / End -->
+  
+  </header>
 
-      <!-- Register -->
-      <div class="tab-content" id="tab2" style="display: inline-block;">
-
-        <form method="post" class="register">
-          
-        <p class="form-row form-row-wide">
-          <label for="username2">Username:
-            <i class="im im-icon-Male"></i>
-            <input class="input-text" name="username" id="username2" value="" type="text">
-          </label>
-        </p>
-          
-        <p class="form-row form-row-wide">
-          <label for="email2">Email Address:
-            <i class="im im-icon-Mail"></i>
-            <input class="input-text" name="email" id="email2" value="" type="text">
-          </label>
-        </p>
-
-        <p class="form-row form-row-wide">
-          <label for="password1">Password:
-            <i class="im im-icon-Lock-2"></i>
-            <input class="input-text" name="password1" id="password1" type="password">
-          </label>
-        </p>
-
-        <p class="form-row form-row-wide">
-          <label for="password2">Repeat Password:
-            <i class="im im-icon-Lock-2"></i>
-            <input class="input-text" name="password2" id="password2" type="password">
-          </label>
-        </p>
-
-        <input class="button border fw margin-top-10" name="register" value="Register" type="submit">
-
-        </form>
+<div id="titlebar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+  
+          <h2>Pricing Tables</h2>
+  
+          <!-- Breadcrumbs -->
+          <nav id="breadcrumbs">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li>Pricing Tables</li>
+            </ul>
+          </nav>
+  
+        </div>
       </div>
-
     </div>
   </div>
+  <div class="container">
+
+      <!-- Row / Start -->
+      <div class="row">
+    
+        <div class="col-md-12">
+          <div class="pricing-container margin-top-30">
+    
+          <!-- Plan #1 -->
+    
+            <div class="plan">
+    
+              <div class="plan-price">
+                <h3>Basic</h3>
+                <span class="value">Free</span>
+                <span class="period">Free of charge one standard listing active for 90 days</span>
+              </div>
+    
+              <div class="plan-features">
+                <ul>
+                  <li>One Listing</li>
+                  <li>90 Days Availability</li>
+                  <li>Non-Featured</li>
+                  <li>Limited Support</li>
+                </ul>
+                <a class="button border" href="#">Get Started</a>
+              </div>
+    
+            </div>
+    
+            <!-- Plan #3 -->
+            <div class="plan featured">
+    
+              <div class="listing-badge">
+                <span class="featured">Featured</span>
+              </div>
+    
+              <div class="plan-price">
+                <h3>Extended</h3>
+                <span class="value">$9</span>
+                <span class="period">One time fee for one listing, highlighted in search results</span>
+              </div>
+              <div class="plan-features">
+                <ul>
+                  <li>One Time Fee</li>
+                  <li>One Listing</li>
+                  <li>Lifetime Availability</li>
+                  <li>Featured In Search Results</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a class="button" href="#">Get Started</a>
+              </div>
+            </div>
+    
+            <!-- Plan #3 -->
+            <div class="plan">
+    
+              <div class="plan-price">
+                <h3>Professional</h3>
+                <span class="value">$59</span>
+                <span class="period">Monthly subscription for unlimited listings and lifetime availability</span>
+              </div>
+    
+              <div class="plan-features">
+                <ul>
+                  <li>Unlimited Listings</li>
+                  <li>Lifetime Availability</li>
+                  <li>Featured In Search Results</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a class="button border" href="#">Get Started</a>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+      <!-- Row / End -->
+    
+    </div>
