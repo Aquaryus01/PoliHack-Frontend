@@ -1,19 +1,36 @@
+<app-navbar></app-navbar> <!--TOP NAVBAR-->
 
-<div class="dashboard-list-box invoices with-icons margin-top-20">
-    <h4>Projects</h4>
-    <ul>
-      <li *ngFor="let group of groups"><i class="list-box-icon sl sl-icon-doc"></i>
-        <strong>{{group.name}}</strong>
-        <ul>
-          <li>{{group.description}}</li>
-        </ul>
-        <ul>
-          <li class="unpaid">Deadline: </li>
-          <li>{{group.end}}</li>
-        </ul>
-        <div class="buttons-to-right">
-          <a href="dashboard-invoice.html" class="button gray">View Project</a>
-        </div>
-      </li>
-    </ul>
+
+<div class="dashboard-content">
+    <!-- <div class="header">
+      <button class="hamburger hamburger--collapse" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+    </div> -->
+
+      <div class="dashboard-list-box invoices with-icons margin-top-20">
+          <h4>Projects</h4>
+          <!-- <h5>Sorry, you don't have any projects in this category :(</h5> -->
+          <ul>
+            <li *ngFor="let group of groups"><i class="list-box-icon sl sl-icon-doc"></i>
+              <strong>{{group.name}}</strong>
+              <ul>
+                <li>{{group.description}}</li>
+              </ul>
+              <ul>
+                <li class="unpaid">Deadline: </li>
+                <li>{{group.end}}</li>
+              </ul>
+              <div class="buttons-to-right">
+                <a href="dashboard-invoice.html" class="button gray">View Project</a>
+              </div>
+            </li>
+            
+          </ul>
+        </div><br><br><br>
+
   </div>
+
+  

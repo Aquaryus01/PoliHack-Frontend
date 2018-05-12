@@ -8,7 +8,6 @@ import { DummyComponent } from './dummy/dummy.component';
 import { ManagerGuard } from './manager.guard';
 import { AddProjectComponent } from './add-project/add-project.component';
 
-
 const appRoutes: Routes = [
   {
     path: 'dashboard-pm', 

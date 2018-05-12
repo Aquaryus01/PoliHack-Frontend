@@ -1,0 +1,14 @@
+<div class="dashboard-nav">
+		<div class="dashboard-nav-inner" style="max-height: 315px;">
+
+			<ul data-submenu-title="Main">
+				<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a  routerLink="/dashboard"><i class="sl sl-icon-settings"></i>Projects</a></li>
+			</ul>
+      
+      
+			<ul data-submenu-title="Account">
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a  routerLink="/dashboard/profile"><i class="sl sl-icon-user"></i> My Profile</a></li>
+          <li><a (click)="handleLogout()" ><i class="sl sl-icon-power"></i> Logout</a></li>
+        </ul>			
+		</div>
+  </div>

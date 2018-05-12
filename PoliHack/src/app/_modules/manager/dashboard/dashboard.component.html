@@ -1,14 +1,10 @@
 <app-navbar></app-navbar> <!--TOP NAVBAR-->
 
+    
+  
 
 <div class="dashboard-content">
-    <!-- <div class="header">
-      <button class="hamburger hamburger--collapse" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-    </div> -->
+
     <app-sort (filterByCompletion)="handleFilter($event)" [numberOfProjects]="numberOfProjects"></app-sort> <!--FIlter -->
 
       <div class="dashboard-list-box invoices with-icons margin-top-20">
