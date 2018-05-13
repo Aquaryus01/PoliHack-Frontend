@@ -46,4 +46,13 @@ export class GroupService {
     });
     return this.http.get(this.settingsService.getUrl() + 'skill/search/' + name, {headers: headers});
   }
+
+  getTasks(id){
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization' : 'Bearer ' + this.authService.getToken()
+    });
+    return this.http.get<Group[]>(this.settingsService.getUrl() + 'task/' + id, {headers: headers});
+  }
+
+
 }

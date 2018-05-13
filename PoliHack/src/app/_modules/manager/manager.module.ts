@@ -10,6 +10,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
 import { FormsModule } from '@angular/forms';
 import { ProjectComponent } from './project/project.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TaskComponent } from './project/task/task.component';
+import { MemberComponent } from './project/member/member.component';
 
 const appRoutes: Routes = [
   {
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: DashboardComponent},
       { path: 'add', component: AddProjectComponent},
-      { path: 'project/:id', component: ProjectComponent},
+      { path: 'project/:id', component: ProjectComponent}, 
+      { path: 'project/:id/member', component: MemberComponent},
       { path: 'profile', component: ProfileComponent}
     ]
   }
@@ -39,7 +42,9 @@ const appRoutes: Routes = [
     SortComponent,
     DummyComponent,
     ProjectComponent,
-    ProfileComponent
+    TaskComponent,
+    MemberComponent,
+    ProfileComponent,
   ]
 })
 export class ManagerModule { }

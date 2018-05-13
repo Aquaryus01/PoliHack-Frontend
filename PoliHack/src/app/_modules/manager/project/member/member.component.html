@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-content">
+
+    <nav id="navigation" class="style-1">
+      <ul id="responsive">
+        <li><a routerLink="/dashboard-pm/project/{{id}}">Tasks</a></li>
+        <li><a routerLink="/dashboard-pm/project/{{id}}/member">Members</a></li>
+      </ul>
+    </nav>
+
+    <div class="dashboard-list-box with-icons margin-top-50">
+        <h4>Recent Tasks</h4>
+        <ul *ngFor="let group of groups">
+          <li (click)="detailBool = !detailBool" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+            <i class="list-box-icon sl sl-icon-layers"></i> {{group.name}}
+            <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+          </li>
+          <li *ngIf="detailBool">
+            <i class="sl sl-icon-arrow-right"></i> <strong><a href="#">Hotel Govendor</a></strong> has been approved!
+          </li>
+        </ul> 
+        <ul>
+          <li> 
+              <i class="sl sl-icon-arrow-right"></i> <strong> Alex Benchea</strong>
+              <br>
+                <span class="badge badge-danger">Frontend: Angular 5</span>
+          </li>
+          <li> 
+              <i class="sl sl-icon-arrow-right"></i> <strong> Andrei Gasparovici</strong>
+              <br>
+                <span class="badge badge-danger">Backend: Javascript</span>
+          </li>
+          <li> 
+              <i class="sl sl-icon-arrow-right"></i> <strong> Mihai Solcan</strong>
+              <br>
+                <span class="badge badge-danger">Frontend: Angular 5</span>
+          </li>
+
+        </ul>
+      </div>
+  
+</div>

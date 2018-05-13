@@ -9,19 +9,25 @@
 
       <div class="dashboard-list-box invoices with-icons margin-top-20">
           <h4>Projects</h4>
+
           <!-- <h5>Sorry, you don't have any projects in this category :(</h5> -->
           <ul>
-            <li *ngFor="let group of groups"><i class="list-box-icon sl sl-icon-doc"></i>
+            <li *ngFor="let group of groups">
               <strong>{{group.name}}</strong>
               <ul>
                 <li>{{group.description}}</li>
               </ul>
+              <br>
               <ul>
                 <li class="unpaid">Deadline: </li>
                 <li>{{group.end}}</li>
               </ul>
+              <ul>
+                  <li class="paid">Sugestion: </li>
+                  <li><strong style="font-size: 0.8em">Alex Benchea </strong><span class="badge badge-danger">Frontend-Angular 5</span></li>
+                </ul>
               <div class="buttons-to-right">
-                <a href="dashboard-invoice.html" class="button gray">View Project</a>
+                <a routerLink="/dashboard-pm/project/{{group.project_id}}"  class="button gray">View Project</a>
               </div>
             </li>
             

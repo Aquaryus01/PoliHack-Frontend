@@ -1,73 +1,105 @@
 <app-navbar></app-navbar>
+
 <div class="dashboard-content">
 
-		<!-- Titlebar -->
-		<div id="titlebar">
-			<div class="row">
-        <div class="col-lg-6 col-md-12">
-            <div class="dashboard-list-box with-icons margin-top-20">
-              <h4>Tasks</h4>
-              <ul>
-                <li>
-                  Your listing <strong><a href="#">Hotel Govendor</a></strong> has been approved!
+    <!-- NAVBAR -->
+    <nav id="navigation" class="style-1">
+      <ul id="responsive">
+        <li><a routerLink="/dashboard-pm/project/{{id}}">Tasks</a></li>
+        <li><a routerLink="/dashboard-pm/project/{{id}}/member">Members</a></li>
+      </ul>
+    </nav>
+
+    <div class="dashboard-list-box with-icons margin-top-50">
+        <h4>Recent Tasks</h4>
+        <ul *ngFor="let group of groups">
+          <li (click)="detailBool = !detailBool" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+            <i class="list-box-icon sl sl-icon-layers"></i> {{group.name}}
+            <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+          </li>
+          <li *ngIf="detailBool">
+            <i class="sl sl-icon-arrow-right"></i> <strong><a href="#">Hotel Govendor</a></strong> has been approved!
+          </li>
+        </ul> 
+        <ul>
+          <li (click)="detailBool = !detailBool" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+              Add a --prefix parameter to MediaWiki's "importDump.php" maintenance script
+              <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+              <br>
+              <span class="badge badge-warning" style="color: white">Status: In progress </span>
+            </li>
+            <li *ngIf="detailBool">
+              <h4 style="padding: 25px 5px !important">Description:</h4>
+              <br>
+              <p>$chars = "abcdefghijkmnopqrstuvwxyz023456789"; 
+                  srand((double)microtime()*1000000); 
+                  $i = 0; 
+                  $pass = '' ; 
+              </p>
+              
+              <h4 style="padding: 25px 5px !important">Members:</h4>
+              <br>
+                <i class="sl sl-icon-arrow-right"></i> <strong> Alex Benchea</strong>
+              <br>
+
+            </li>
+            <li (click)="detailBool2 = !detailBool2" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+                Research commonly asked questions and write a FAQ page (Beginner Task)
+                <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+                <br>
+                <span class="badge badge-danger">Status: Dismissed</span>
+                
+              </li>
+              <li *ngIf="detailBool2">
+                <h4 style="padding: 25px 5px !important">Description:</h4>
+                <br>
+               
+                
+                <h4 style="padding: 25px 5px !important">Members:</h4>
+                <br>
+                  <i class="sl sl-icon-arrow-right"></i> <strong> Alex Benchea</strong>
+                <br>
+  
+              </li>
+
+              <li (click)="detailBool1 = !detailBool1" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+                  FRONTEND: Remake register design
                   <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+                  <br>
+                  <span class="badge badge-warning" style="color: white !important">Status: In progress</span>
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Your listing <strong><a href="#">Hotel Govendor</a></strong> has been approved!
-                  <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+                <li *ngIf="detailBool1">
+                  <h4 style="padding: 25px 5px !important">Description:</h4>
+                  <br>
+                  
+                  <h4 style="padding: 25px 5px !important">Members:</h4>
+                  <br>
+                    <i class="sl sl-icon-arrow-right"></i> <strong> Alex Benchea</strong>
+                  <br>
+    
                 </li>
-              </ul>
-              <ul>
-                <li>
-                  Your listing <strong><a href="#">Hotel Govendor</a></strong> has been approved!
-                  <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-              <div class="dashboard-list-box with-icons margin-top-20">
-                <h4>Recent Activities</h4>
-                <ul>
-                  <li>
-                    <i class="list-box-icon sl sl-icon-layers"></i> Your listing <strong><a href="#">Hotel Govendor</a></strong> has been approved!
+
+                <li (click)="detailBool = !detailBool" [ngStyle]="{'border-bottom': detailBool==true? 'none' : '1px solid #eaeaea'}"> 
+                    Suggest meaningful changes to the OpenDF Website
                     <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+                    <br>
+                    <span class="badge badge-success">Status: Finished</span>
                   </li>
+                  <li *ngIf="detailBool">
+                    <h4 style="padding: 25px 5px !important">Description:</h4>
+                    <br>
+                    <p>M-am lasat de foarte mult timp de legale si vreau sa va spun e minunat
+                        M-am lasat de foarte mult timp de legale si vreau sa va spun e minunat
+                        M-am lasat de foarte mult timp de legale si vreau sa va spun e minunat
+                    </p>
+                    
+                    <h4 style="padding: 25px 5px !important">Members:</h4>
+                    <br>
+                      <i class="sl sl-icon-arrow-right"></i> <strong> Alex Benchea</strong>
+                    <br>
       
-                  <li>
-                    <i class="list-box-icon sl sl-icon-star"></i> Kathy Brown left a review <div class="numerical-rating high" data-rating="5.0"></div> on <strong><a href="#">Burger House</a></strong>
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
                   </li>
-      
-                  <li>
-                    <i class="list-box-icon sl sl-icon-heart"></i> Someone bookmarked your <strong><a href="#">Burger House</a></strong> listing!
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li>
-      
-                  <li>
-                    <i class="list-box-icon sl sl-icon-star"></i> Kathy Brown left a review <div class="numerical-rating mid" data-rating="3.0"></div> on <strong><a href="#">Airport</a></strong>
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li>
-      
-                  <li>
-                    <i class="list-box-icon sl sl-icon-heart"></i> Someone bookmarked your <strong><a href="#">Burger House</a></strong> listing!
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li>
-      
-                  <li>
-                    <i class="list-box-icon sl sl-icon-star"></i> John Doe left a review <div class="numerical-rating high" data-rating="4.0"></div> on <strong><a href="#">Burger House</a></strong>
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li>
-      
-                  <li>
-                    <i class="list-box-icon sl sl-icon-star"></i> Jack Perry left a review <div class="numerical-rating low" data-rating="2.5"></div> on <strong><a href="#">Tom's Restaurant</a></strong>
-                    <a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-			</div>
-		</div>
-	</div>
+        </ul>
+      </div>
+
+</div>
